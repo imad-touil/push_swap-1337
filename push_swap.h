@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 22:58:32 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/15 16:47:03 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/16 21:20:49 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,30 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
 
-t_list	*create_node(void *content);
-void	addfront(t_list **head, void *contnt);
+t_list	*create_node(int content);
+void	addback(t_list **head, int content);
 void	ft_putnbr(int n);
 void	ft_putchar(char c);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 void	printList(t_list *node);
-void	ft_putstr(char *str);
+int		ft_strlcpy(char *dest, char *src, int size);
+char	**ft_split(char *str);
+int		ft_strlen(char *str);
+int		ft_isdigit(int c);
+int		is_valid_number(char *str);
+void	checker(char **av, t_list **head);
+int		is_valid_range(char *str);
+int		is_dublicate(int num, t_list *head);
+void	print_error(void);
 
 #endif

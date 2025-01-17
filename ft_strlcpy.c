@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/16 22:24:30 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/15 20:36:07 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/15 20:47:19 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker(char **av, t_list **head)
+int	ft_strlcpy(char *dest, char *src, int size)
 {
-	char	**res;
-	int		i;
-	int		j;
-	int		num;
+	int	i;
+	int	len;
 
-	i = 1;
-	while (av[i])
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	i = 0;
+	while (i + 1 < size && src[i])
 	{
-		res = ft_split(av[i]);
-		j = 0;
-		while (res[j])
-		{
-			if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
-				print_error();
-			num = ft_atoi(res[j]);
-			if (is_dublicate(num, *head))
-				print_error();
-			if (is_dublicate(num, *head))
-				print_error();
-			addback(head, num);
-			j++;
-		}
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
+	return (len);
 }
-
-
-// 2147483647, -2147483648

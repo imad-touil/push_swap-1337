@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   is_dublicate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/16 22:24:30 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/16 19:07:25 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/16 20:32:06 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker(char **av, t_list **head)
+int	is_dublicate(int num, t_list *head)
 {
-	char	**res;
-	int		i;
-	int		j;
-	int		num;
+	t_list	*tmp;
 
-	i = 1;
-	while (av[i])
+	tmp = head;
+	while (tmp)
 	{
-		res = ft_split(av[i]);
-		j = 0;
-		while (res[j])
-		{
-			if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
-				print_error();
-			num = ft_atoi(res[j]);
-			if (is_dublicate(num, *head))
-				print_error();
-			if (is_dublicate(num, *head))
-				print_error();
-			addback(head, num);
-			j++;
-		}
-		i++;
+		if (num == tmp -> content)
+			return (1);
+		tmp = tmp -> next;
 	}
+	return (0);
 }
-
-
-// 2147483647, -2147483648
