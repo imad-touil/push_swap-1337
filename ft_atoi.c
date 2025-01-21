@@ -6,17 +6,17 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:40:22 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/16 20:46:43 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:06:26 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	size_t				i;
-	unsigned long long	r;
-	int					s;
+	size_t	i;
+	long	r;
+	long	s;
 
 	i = 0;
 	r = 0;

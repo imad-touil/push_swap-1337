@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 18:28:24 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/16 10:56:47 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/20 19:02:38 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_count_word(char *str)
 	return (counter);
 }
 
-static char	**ft_free(char **str)
+char	**ft_free(char **str)
 {
 	int	i;
 

@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/20 19:02:32 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 09:16:55 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/21 10:12:17 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker(char **av, t_list **head)
+void	sa(t_list **head)
 {
-	char	**res;
-	int		i;
-	int		j;
-	int		num;
+	t_list	*tmp;
 
-	i = 1;
-	while (av[i])
-	{
-		res = ft_split(av[i]);
-		j = 0;
-		while (res[j])
-		{
-			if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
-				print_error();
-			num = ft_atoi(res[j]);
-			if (is_dublicate(num, *head))
-				print_error();
-			addback(head, num);
-			j++;
-		}
-		i++;
-	}
-	ft_free(res);
+	if (!head || !(*head) || !(*head) -> next)
+		return ;
+	tmp = (*head) -> next;
+	(*head) -> next = tmp -> next;
+	if (tmp -> next)
+		tmp -> next -> prev = *head;
+	tmp -> next = *head;
+	tmp -> prev = (*head) -> prev;
+	(*head) -> prev = tmp;
+	*head = tmp;
 }
