@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   create_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 12:17:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 12:38:55 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/14 18:58:30 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/21 12:28:12 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list **ahead, t_list **bhead)
+t_list	*create_node(int content)
 {
-	t_list	*tmp;
-	
-	if (!bhead || !*bhead)
-		return ;
-	tmp = *bhead;
-	*bhead = tmp -> next;
-	if (*bhead)
-		(*bhead)-> prev = NULL;
-	tmp -> next = *ahead;
-	if (*ahead)
-		(*ahead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*ahead = tmp;
+	t_list	*new;
+
+	new = (t_list*)malloc(sizeof(t_list));
+	if (!new)
+	{
+		free_node(&new);
+		return (NULL);
+	}
+	new -> content = content;
+	new -> next = NULL;
+	new -> prev = NULL;
+	return (new);
 }

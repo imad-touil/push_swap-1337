@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 12:17:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 12:38:55 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 17:37:43 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/21 17:37:53 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list **ahead, t_list **bhead)
+void	rb(t_list **head)
 {
 	t_list	*tmp;
-	
-	if (!bhead || !*bhead)
+	t_list	*tail;
+
+	if (!head || !*head || !(*head)-> next)
 		return ;
-	tmp = *bhead;
-	*bhead = tmp -> next;
-	if (*bhead)
-		(*bhead)-> prev = NULL;
-	tmp -> next = *ahead;
-	if (*ahead)
-		(*ahead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*ahead = tmp;
+	tmp = *head;
+	*head = tmp -> next;
+	(*head)-> prev = NULL;
+	tail = *head;
+	while (tail -> next)
+		tail = tail -> next;
+	tail -> next = tmp;
+	tmp -> prev = tail;
+	tmp -> next = NULL;
 }

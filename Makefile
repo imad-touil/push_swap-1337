@@ -1,12 +1,13 @@
 NAME = push_swap.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = push_swap.c ft_atoi.c ft_putchar.c\
+SRCS = main.c ft_atoi.c ft_putchar.c\
 	ft_putnbr.c ft_strlcpy.c ft_split.c\
 	ft_strlen.c ft_isdigit.c is_valid_number.c\
 	is_valid_range.c is_dublicate.c checker.c\
 	print_error.c is_empty.c free_node.c\
-	sa.c sb.c 
+	create_node.c addback.c sa.c sb.c pb.c pa.c\
+	ra.c rb.c 
 
 OBJS = $(SRCS:.c=.o)
 

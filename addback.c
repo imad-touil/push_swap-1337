@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   addback.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 12:17:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 12:38:55 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 12:24:29 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/21 18:12:51 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list **ahead, t_list **bhead)
+void	addback(t_list **head, int content)
 {
+	t_list	*node;
 	t_list	*tmp;
-	
-	if (!bhead || !*bhead)
+
+	node = create_node(content);
+	if (!node)
 		return ;
-	tmp = *bhead;
-	*bhead = tmp -> next;
-	if (*bhead)
-		(*bhead)-> prev = NULL;
-	tmp -> next = *ahead;
-	if (*ahead)
-		(*ahead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*ahead = tmp;
+	if (*head == NULL)
+	{
+		*head = node;
+		return ;
+	}
+	tmp = *head;
+	while (tmp -> next)
+		tmp = tmp -> next;
+	tmp -> next = node;
+	node -> prev = tmp;
 }

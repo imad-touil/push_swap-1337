@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:13:42 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 11:20:14 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:33:03 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void	sb(t_list **head)
 	t_list	*first;
 	t_list	*second;
 
+	if (!head || !(*head) || !(*head)-> next)
+		return ;
 	first = *head;
-	second = (*head) -> next;
+	second = (*head)-> next;
 	first -> next = second -> next;
 	if (second -> next)
 		second -> next -> prev = first;

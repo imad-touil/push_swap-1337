@@ -6,35 +6,47 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/20 19:02:32 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:24:37 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker(char **av, t_list **head)
+static void	ft_helper(char *str, t_list **head)
 {
 	char	**res;
-	int		i;
-	int		j;
 	int		num;
+	int		j;
+
+	res = ft_split(str);
+	j = 0;
+	while (res[j])
+	{
+		if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
+		{
+			ft_free(res);
+			print_error();
+		}
+		num = ft_atoi(res[j]);
+		if (is_dublicate(num, *head))
+		{
+			ft_free(res);
+			print_error();
+		}
+		addback(head, num);
+		j++;
+	}
+	ft_free(res);
+}
+
+void	checker(char **av, t_list **head)
+{
+	int		i;
 
 	i = 1;
 	while (av[i])
 	{
-		res = ft_split(av[i]);
-		j = 0;
-		while (res[j])
-		{
-			if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
-				print_error();
-			num = ft_atoi(res[j]);
-			if (is_dublicate(num, *head))
-				print_error();
-			addback(head, num);
-			j++;
-		}
+		ft_helper(av[i], head);
 		i++;
 	}
-	ft_free(res);
 }
