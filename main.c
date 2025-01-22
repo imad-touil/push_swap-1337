@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 18:42:15 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:45:27 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,19 +142,20 @@ void	printList(t_list *node) {
 // 		i++;
 // 	}
 // 	checker(av, &head);
-// 	// printf("\n\n******************* Before any rotate ************************\n\n");
-// 	for (int i = 0; i < 5; i++)
-// 		pb(&head, &bhead);
+// 	printf("\n\n******************* Before any rotate ************************\n\n");
+// 	// for (int i = 0; i < 5; i++)
+// 	// 	pb(&head, &bhead);
+// 	printList(head);
 // 	pb(&head, &bhead);
 // 	pb(&head, &bhead);
 // 	pb(&head, &bhead);
 // 	printList(head);
 // 	printList(bhead);
-// 	ra(&head);
+// 	rr(&head, &bhead);
 // 	printf("\n\n******************* After rotate a ************************\n\n");
 // 	printList(head);
 // 	printList(bhead);
-// 	rb(&head);
+// 	rb(&bhead);
 // 	printf("\n\n******************* After rotate b ************************\n\n");
 // 	printList(head);
 // 	printList(bhead);

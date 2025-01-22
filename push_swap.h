@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 22:58:32 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 17:38:14 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:17:35 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,11 @@ void	free_node(t_list **head);
 char	**ft_free(char **str);
 void	sa(t_list **head);
 void	sb(t_list **head);
+void	ss(t_list **a, t_list **b);
 void	pb(t_list **ahead, t_list **bhead);
 void	pa(t_list **ahead, t_list **bhead);
 void	ra(t_list **head);
 void	rb(t_list **head);
+void	rr(t_list **a, t_list **b);
 
 #endif
