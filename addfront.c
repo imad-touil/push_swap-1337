@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   addfront.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:13:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 13:18:01 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/23 16:22:50 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/23 16:53:08 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_list **ahead, t_list **bhead)
+void	addfront(t_list **head, int	content)
 {
 	t_list	*tmp;
 
-	if (!ahead || !*ahead)
+	tmp = create_node(content);
+	if (!*head)
+	{
+		*head = tmp;
 		return ;
-	tmp = *ahead;
-	*ahead = tmp -> next;
-	if (*ahead)
-		(*ahead)-> prev = NULL;
-	tmp -> next = *bhead;
-	if (*bhead)
-		(*bhead)-> prev = tmp;
+	}
+	tmp -> next = *head;
 	tmp -> prev = NULL;
-	*bhead = tmp;
-	printf("Hi\n");
+	(*head)-> prev = tmp;
+	*head = tmp;
 }

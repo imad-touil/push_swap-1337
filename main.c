@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 10:45:27 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:06:20 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	printList(t_list *node) {
 // 	char *t = "-21474836493333";
 // 	if (range(ft_atoi(t)) != 1)
 // 		printf("Hello");
-// 	else
+// 	else 
 // 		printf("bslama!");
 // 	return (0);
 
@@ -161,6 +161,79 @@ void	printList(t_list *node) {
 // 	printList(bhead);
 // 	while (1); // To Examine Leaks 
 // }
+
+
+
+// ************************* rra/rrb Test **************************************
+
+// int	main(int ac, char *av[])
+// {
+// 	t_list	*head;
+// 	t_list	*bhead;
+
+// 	head = NULL;
+// 	if (ac == 1)
+// 		return (1);
+// 	int	i = 1;
+// 	bhead = NULL;
+// 	while (i < ac)
+// 	{
+// 		if (is_empty(av[i]))
+// 			print_error();
+// 		i++;
+// 	}
+// 	checker(av, &head);
+// 	printf("print stack A at the beginning\n");
+// 	printList(head);
+// 	printList(bhead);
+// 	pb(&head, &bhead);
+// 	pb(&head, &bhead);
+// 	pb(&head, &bhead);
+// 	pb(&head, &bhead);
+// 	printf("\n<< pb >> 3 times and print both stak A and stack B\n\n");
+// 	printList(head);
+// 	printList(bhead);
+// 	printf("\n<< rra >> and << rrb >> 1 time and print both stak A and stack B\n\n");
+// 	// rra(&head);
+// 	// rrb(&bhead);
+// 	rrr(&head, &bhead);
+// 	printList(head);
+// 	printList(bhead);
+// 	while (1);
+// }
+
+// **************** AddfrontTest **********************
+
+// int	main(int ac, char *av[])
+// {
+// 	int	x;
+// 	int i;
+// 	t_list	*head;
+
+// 	if (ac < 2)
+// 		return (1);
+// 	i = ac - 1;
+// 	head = NULL;
+// 	while (i > 0)
+// 	{
+// 		x = ft_atoi(av[i]);
+// 		addfront(&head, x);
+// 		i--;
+// 	}
+// 	// while (head)
+// 	// {
+// 	// 	printf("%d ", head -> content);
+// 	// 	head = head -> next;
+// 	// }
+// 	printList(head);
+// 	printf("\n");
+// 	return (0);
+// }
+
+
+
+
+
 
 
 

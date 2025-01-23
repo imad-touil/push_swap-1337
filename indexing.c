@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:13:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 13:18:01 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/23 16:18:14 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/23 16:20:14 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_list **ahead, t_list **bhead)
+int	main(int ac, char *av[])
 {
-	t_list	*tmp;
-
-	if (!ahead || !*ahead)
-		return ;
-	tmp = *ahead;
-	*ahead = tmp -> next;
-	if (*ahead)
-		(*ahead)-> prev = NULL;
-	tmp -> next = *bhead;
-	if (*bhead)
-		(*bhead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*bhead = tmp;
-	printf("Hi\n");
+	if (ac < 2)
+	{
+		printf("Funny World\n");
+		return (0);
+	}
+	
 }
