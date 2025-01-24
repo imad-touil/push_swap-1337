@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   sort_two.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:13:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 17:28:26 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/24 18:47:12 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/24 21:26:14 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_list **ahead, t_list **bhead)
+void	sort_two(t_list **a)
 {
+	int	x;
 	t_list	*tmp;
 
-	if (!ahead || !*ahead)
-		return ;
-	tmp = *ahead;
-	*ahead = tmp -> next;
-	if (*ahead)
-		(*ahead)-> prev = NULL;
-	tmp -> next = *bhead;
-	if (*bhead)
-		(*bhead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*bhead = tmp;
-	write(1, "pb\n", 3);
+	tmp = *a;
+	x = tmp-> content;
+	tmp = tmp -> next;
+	if (x > tmp-> content)
+		sa(a, 1);
 }

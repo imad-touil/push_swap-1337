@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:46:03 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 10:11:46 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:42:09 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ss(t_list **a, t_list **b)
 	if ((!a || !(*a) || !(*a)-> next)
 		|| (!b || !(*b) || !(*b)-> next))
 		return ;
-	sa(a);
-	sb(b);
+	sa(a, 0);
+	sb(b, 0);
+	write(1, "ss\n", 3);
 }

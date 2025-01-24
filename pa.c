@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:17:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 12:38:55 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:47:05 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	pa(t_list **ahead, t_list **bhead)
 {
 	t_list	*tmp;
-	
+
 	if (!bhead || !*bhead)
 		return ;
 	tmp = *bhead;
@@ -27,4 +27,5 @@ void	pa(t_list **ahead, t_list **bhead)
 		(*ahead)-> prev = tmp;
 	tmp -> prev = NULL;
 	*ahead = tmp;
+	write(1, "pa\n", 3);
 }

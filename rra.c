@@ -6,13 +6,13 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:13:00 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 11:38:41 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:44:37 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_list **head)
+void	rra(t_list **head, int key)
 {
 	t_list	*tmp;
 
@@ -26,4 +26,6 @@ void	rra(t_list **head)
 	tmp -> prev = NULL;
 	(*head)-> prev = tmp;
 	*head = tmp;
+	if (!key)
+		write(1, "rra\n", 4);
 }

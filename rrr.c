@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:58:16 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/22 12:01:34 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:45:12 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	rrr(t_list **a, t_list **b)
 {
 	if (a && *a && (*a)-> next)
-		rra(a);
+		rra(a, 0);
 	if (b && *b && (*b)-> next)
-		rra(b);
+		rra(b, 0);
+	write(1, "rrr\n", 4);
 }

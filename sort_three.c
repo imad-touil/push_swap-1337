@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:13:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 17:28:26 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/24 21:22:56 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_list **ahead, t_list **bhead)
+void	sort_three(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-
-	if (!ahead || !*ahead)
+	if (!a || !b)
 		return ;
-	tmp = *ahead;
-	*ahead = tmp -> next;
-	if (*ahead)
-		(*ahead)-> prev = NULL;
-	tmp -> next = *bhead;
-	if (*bhead)
-		(*bhead)-> prev = tmp;
-	tmp -> prev = NULL;
-	*bhead = tmp;
-	write(1, "pb\n", 3);
 }

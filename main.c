@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 11:01:24 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:27:27 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	printList(t_list *node) {
 // 	char *t = "-21474836493333";
 // 	if (range(ft_atoi(t)) != 1)
 // 		printf("Hello");
-// 	else 
+// 	else
 // 		printf("bslama!");
 // 	return (0);
 
@@ -202,58 +202,43 @@ void	printList(t_list *node) {
 // 	while (1);
 // }
 
-// **************** AddfrontTest **********************
 
-// int	main(int ac, char *av[])
-// {
-// 	int	x;
-// 	int i;
-// 	t_list	*head;
-
-// 	if (ac < 2)
-// 		return (1);
-// 	i = ac - 1;
-// 	head = NULL;
-// 	while (i > 0)
-// 	{
-// 		x = ft_atoi(av[i]);
-// 		addfront(&head, x);
-// 		i--;
-// 	}
-// 	// while (head)
-// 	// {
-// 	// 	printf("%d ", head -> content);
-// 	// 	head = head -> next;
-// 	// }
-// 	printList(head);
-// 	printf("\n");
-// 	return (0);
-// }
-
-
-
-
-
-
-
-
+void	sort(t_list **a, t_list **b, int size)
+{
+	if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a, b);
+	// else if (size == 4)
+	// 	sort_four(&a, &b);
+	// else if (size == 5)
+	// 	sort_five(&a, &b);
+	// else if (size > 5)
+	// 	sort_more(&a, &b);
+}
 
 int	main(int ac, char *av[])
 {
-	t_list	*head;
-	t_list	*bhead;
+	t_list	*a;
+	t_list	*b;
+	int		size;
+	int		i;
 
-	head = NULL;
 	if (ac == 1)
 		return (1);
-	int	i = 1;
-	bhead = NULL;
-	while (i < ac)
+	a = NULL;
+	b = NULL;
+	i = 0;
+	while (++i < ac)
 	{
 		if (is_empty(av[i]))
 			print_error();
-		i++;
 	}
-	checker(av, &head);
-	printList(head);
+	checker(av, &a);
+	// printList(a);
+	size = list_size(&a);
+	printf("%d\n", size);
+	sort(&a, &b, size);
+	printList(a); 
+	return (0);
 }
