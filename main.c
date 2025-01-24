@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/23 17:06:20 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:01:24 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,22 +238,22 @@ void	printList(t_list *node) {
 
 
 
-// int	main(int ac, char *av[])
-// {
-// 	t_list	*head;
-// 	t_list	*bhead;
+int	main(int ac, char *av[])
+{
+	t_list	*head;
+	t_list	*bhead;
 
-// 	head = NULL;
-// 	if (ac == 1)
-// 		return (1);
-// 	int	i = 1;
-// 	bhead = NULL;
-// 	while (i < ac)
-// 	{
-// 		if (is_empty(av[i]))
-// 			print_error();
-// 		i++;
-// 	}
-// 	checker(av, &head);
-// 	printList(head);
-// }
+	head = NULL;
+	if (ac == 1)
+		return (1);
+	int	i = 1;
+	bhead = NULL;
+	while (i < ac)
+	{
+		if (is_empty(av[i]))
+			print_error();
+		i++;
+	}
+	checker(av, &head);
+	printList(head);
+}
