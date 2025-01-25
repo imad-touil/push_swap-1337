@@ -6,11 +6,27 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:24:29 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 18:12:51 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/25 22:52:19 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// int	set_index(t_list **head, int content)
+// {
+// 	int		counter;
+// 	t_list	*tmp;
+
+// 	counter = 0;
+// 	tmp = *head;
+// 	while (tmp -> next)
+// 	{
+// 		if (tmp -> content < content)
+// 			counter++;
+// 		tmp	= tmp -> next;
+// 	}
+// 	return (counter);
+// }
 
 void	addback(t_list **head, int content)
 {
@@ -23,6 +39,7 @@ void	addback(t_list **head, int content)
 	if (*head == NULL)
 	{
 		*head = node;
+		(*head)-> index = 0;
 		return ;
 	}
 	tmp = *head;
@@ -30,4 +47,12 @@ void	addback(t_list **head, int content)
 		tmp = tmp -> next;
 	tmp -> next = node;
 	node -> prev = tmp;
+	// tmp -> index = set_index(head, content);
+	// content = (*head)-> content;
+	// while (tmp)
+	// {
+	// 	if (tmp -> content > content)
+	// 		tmp -> index += 1;
+	// 	tmp = tmp -> prev;
+	// }
 }

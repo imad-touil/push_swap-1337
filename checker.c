@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 18:24:37 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/25 22:54:55 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static void	ft_helper(char *str, t_list **head)
 
 void	checker(char **av, t_list **head)
 {
-	int		i;
+	int	i;
+	int	size;
 
 	i = 1;
 	while (av[i])
@@ -49,4 +50,6 @@ void	checker(char **av, t_list **head)
 		ft_helper(av[i], head);
 		i++;
 	}
+	size = list_size(head);
+	set_index(head, size);
 }

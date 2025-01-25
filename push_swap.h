@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 22:58:32 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 21:27:48 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/25 22:54:44 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	rrr(t_list **a, t_list **b);
 int		list_size(t_list **head);
 void	sort_two(t_list **a);
 void	sort_three(t_list **a, t_list **b);
+void	set_index(t_list **head, int size);
 
 #endif

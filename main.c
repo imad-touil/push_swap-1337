@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 21:27:27 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:13:06 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ void	printList(t_list *node) {
     printf("Traversal in forward direction:\n");
     while (node != NULL) {
 		tmp = node -> content;
-        printf("%d ", tmp);
+        printf("value ==> %d, index ==>> %d\n", tmp, node -> index);
         last = node;
         node = node->next;
     }
     printf("\n");
-    printf("Traversal in reverse direction:\n");
-    while (last != NULL) {
-		tmp = last -> content;
-        printf("%d ", tmp);
-        last = last->prev;
-    }
-    printf("\n");
+    // printf("Traversal in reverse direction:\n");
+    // while (last != NULL) {
+	// 	tmp = last -> content;
+    //     printf("%d ", tmp);
+    //     last = last->prev;
+    // }
+    // printf("\n");
 }
 
 // int	main(void)
@@ -202,26 +202,12 @@ void	printList(t_list *node) {
 // 	while (1);
 // }
 
-
-void	sort(t_list **a, t_list **b, int size)
-{
-	if (size == 2)
-		sort_two(a);
-	else if (size == 3)
-		sort_three(a, b);
-	// else if (size == 4)
-	// 	sort_four(&a, &b);
-	// else if (size == 5)
-	// 	sort_five(&a, &b);
-	// else if (size > 5)
-	// 	sort_more(&a, &b);
-}
-
+// ********************* Test indexing ***********************
 int	main(int ac, char *av[])
 {
 	t_list	*a;
 	t_list	*b;
-	int		size;
+	// int		size;
 	int		i;
 
 	if (ac == 1)
@@ -235,10 +221,48 @@ int	main(int ac, char *av[])
 			print_error();
 	}
 	checker(av, &a);
-	// printList(a);
-	size = list_size(&a);
-	printf("%d\n", size);
-	sort(&a, &b, size);
 	printList(a); 
 	return (0);
 }
+
+
+
+
+
+
+
+// void	sort(t_list **a, t_list **b, int size)
+// {
+// 	if (size == 2)
+// 		sort_two(a);
+// 	else if (size == 3)
+// 		sort_three(a, b);
+// 	// else if (size == 4)
+// 	// 	sort_four(&a, &b);
+// 	// else if (size == 5)
+// 	// 	sort_five(&a, &b);
+// 	// else if (size > 5)
+// 	// 	sort_more(&a, &b);
+// }
+
+// int	main(int ac, char *av[])
+// {
+// 	t_list	*a;
+// 	t_list	*b;
+// 	// int		size;
+// 	int		i;
+
+// 	if (ac == 1)
+// 		return (1);
+// 	a = NULL;
+// 	b = NULL;
+// 	i = 0;
+// 	while (++i < ac)
+// 	{
+// 		if (is_empty(av[i]))
+// 			print_error();
+// 	}
+// 	checker(av, &a);
+// 	printList(a); 
+// 	return (0);
+// }
