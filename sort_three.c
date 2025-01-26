@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 01:35:51 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:41:24 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ void	sort_three(t_list **a)
 		ra(a, 1);
 	else if ((*a)-> next -> index == max_index)
 		rra(a, 1);
+	if ((*a)-> content > (*a)-> next -> content)
+		sa(a, 1);
 }

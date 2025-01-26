@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   set_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 17:40:26 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/26 16:57:53 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/26 17:03:27 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_four(t_list **a, t_list **b)
+void	set_position(t_list **a, int size)
 {
 	t_list	*tmp;
-	t_list	*min;
 	int		i;
 
 	tmp = *a;
 	i = 0;
-	while (tmp)
+	while (tmp -> next)
 	{
-		if (tmp -> index == 0)
-			min = tmp;
-		tmp = tmp -> next;
-	}
-	tmp = *a;
-	while (tmp != min)
-	{
-		if (tmp -> position == 1)
-			ra(a, 1);
+		if (i++ <= size)
+			tmp -> position = 1;
 		else
-			rra(a, 1);
+			tmp -> position = 0;
 		tmp = tmp -> next;
 	}
-	pb(a, b);
-	printf("hnaaaaa %d\n", (*a)-> content);
-	sort_three(a);
-	pa(a, b);
 }
