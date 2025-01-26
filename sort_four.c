@@ -6,37 +6,41 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 17:40:26 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:08:08 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	get_minindex(t_list **a)
+{
+	t_list	*tmp;
+	int		min;
+
+	tmp = *a;
+	min = tmp -> index;
+	while (tmp)
+	{
+		if (tmp -> index < min)
+			min = tmp -> index;
+		tmp = tmp -> next;
+	}
+	return (min);
+}
+
 void	sort_four(t_list **a, t_list **b)
 {
 	t_list	*tmp;
-	t_list	*min;
-	int		i;
+	int		min_index;
 
 	tmp = *a;
-	i = 0;
-	while (tmp)
+	min_index = get_minindex(a);
+	while (tmp -> index != min_index)
 	{
-		if (tmp -> index == 0)
-			min = tmp;
-		tmp = tmp -> next;
-	}
-	tmp = *a;
-	while (tmp != min)
-	{
-		if (tmp -> position == 1)
-			ra(a, 1);
-		else
-			rra(a, 1);
-		tmp = tmp -> next;
+		ra(a, 1);
+		tmp = *a;
 	}
 	pb(a, b);
-	printf("hnaaaaa %d\n", (*a)-> content);
 	sort_three(a);
 	pa(a, b);
 }

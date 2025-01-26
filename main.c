@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 17:32:24 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:17:51 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,36 +274,6 @@ void	sort(t_list **a, t_list **b, int size)
 
 // ***************** Sort Three ****************
 
-int	main(int ac, char *av[])
-{
-	t_list	*a;
-	t_list	*b;
-	int		i;
-
-	if (ac == 1)
-		return (1);
-	a = NULL;
-	b = NULL;
-	i = 0;
-	while (++i < ac)
-	{
-		if (is_empty(av[i]))
-			print_error();
-	}
-	checker(av, &a);
-	printList(a);
-	sort(&a, &b, list_size(&a));
-	printList(a);
-	return (0);
-}
-
-
-
-
-
-
-// ***************** Sort Four ****************
-
 // int	main(int ac, char *av[])
 // {
 // 	t_list	*a;
@@ -326,3 +296,33 @@ int	main(int ac, char *av[])
 // 	printList(a);
 // 	return (0);
 // }
+
+
+
+
+
+
+// ***************** Sort Four ****************
+
+int	main(int ac, char *av[])
+{
+	t_list	*a;
+	t_list	*b;
+	int		i;
+
+	if (ac == 1)
+		return (1);
+	a = NULL;
+	b = NULL;
+	i = 0;
+	while (++i < ac)
+	{
+		if (is_empty(av[i]))
+			print_error();
+	}
+	checker(av, &a);
+	printList(a);
+	sort(&a, &b, list_size(&a));
+	printList(a);
+	return (0);
+}
