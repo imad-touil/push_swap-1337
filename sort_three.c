@@ -6,36 +6,33 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 23:19:48 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 23:39:43 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_maxindex(t_list **a)
-{
-	t_list	*tmp;
-	int		max;
-
-	tmp = *a;
-	max = tmp -> index;
-	while (tmp -> next)
-	{
-		if (tmp -> index > max)
-			max = tmp -> index;
-		tmp = tmp -> next;
-	}
-	return (max);
-}
-
 void	sort_three(t_list **a)
 {
-	int	max_index;
-	max_index = get_maxindex(a);
-	if ((*a)-> index == max_index)
-		ra(a, 1);
-	else if ((*a)-> next -> index == max_index)
+	int	first = (*a)->content;
+	int	second = (*a)->next->content;
+	int	third = (*a)->next->next->content;
+
+	if (first > second && second > third)
+	{
+		sa(a, 1);
 		rra(a, 1);
-	if ((*a)-> content > (*a)-> next -> content)
+	}
+	else if (first > third && third > second)
+		ra(a, 1);
+	else if (second > first && first > third)
+		rra(a, 1);
+	else if (second > third && third > first)
+	{
+		sa(a, 1);
+		ra(a, 1);
+	}
+	else if (third > first && first > second)
 		sa(a, 1);
 }
+
