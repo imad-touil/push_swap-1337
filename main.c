@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/25 23:13:06 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 02:53:03 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,47 +203,50 @@ void	printList(t_list *node) {
 // }
 
 // ********************* Test indexing ***********************
-int	main(int ac, char *av[])
-{
-	t_list	*a;
-	t_list	*b;
-	// int		size;
-	int		i;
+// int	main(int ac, char *av[])
+// {
+// 	t_list	*a;
+// 	t_list	*b;
+// 	int		i;
 
-	if (ac == 1)
-		return (1);
-	a = NULL;
-	b = NULL;
-	i = 0;
-	while (++i < ac)
-	{
-		if (is_empty(av[i]))
-			print_error();
-	}
-	checker(av, &a);
-	printList(a); 
-	return (0);
+// 	if (ac == 1)
+// 		return (1);
+// 	a = NULL;
+// 	b = NULL;
+// 	i = 0;
+// 	while (++i < ac)
+// 	{
+// 		if (is_empty(av[i]))
+// 			print_error();
+// 	}
+// 	checker(av, &a);
+// 	printList(a); 
+// 	return (0);
+// }
+
+
+
+
+
+
+
+void	sort(t_list **a, t_list **b, int size)
+{
+	if (!b)
+		printf("Say Hi\n");
+	if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size == 4)
+		sort_four(a, b);
+	// else if (size == 5)
+	// 	sort_five(&a, &b);
+	// else if (size > 5)
+	// 	sort_more(&a, &b);
 }
 
-
-
-
-
-
-
-// void	sort(t_list **a, t_list **b, int size)
-// {
-// 	if (size == 2)
-// 		sort_two(a);
-// 	else if (size == 3)
-// 		sort_three(a, b);
-// 	// else if (size == 4)
-// 	// 	sort_four(&a, &b);
-// 	// else if (size == 5)
-// 	// 	sort_five(&a, &b);
-// 	// else if (size > 5)
-// 	// 	sort_more(&a, &b);
-// }
+// ***************** Sort Two ****************
 
 // int	main(int ac, char *av[])
 // {
@@ -264,5 +267,62 @@ int	main(int ac, char *av[])
 // 	}
 // 	checker(av, &a);
 // 	printList(a); 
+// 	return (0);
+// }
+
+
+
+// ***************** Sort Three ****************
+
+int	main(int ac, char *av[])
+{
+	t_list	*a;
+	t_list	*b;
+	int		i;
+
+	if (ac == 1)
+		return (1);
+	a = NULL;
+	b = NULL;
+	i = 0;
+	while (++i < ac)
+	{
+		if (is_empty(av[i]))
+			print_error();
+	}
+	checker(av, &a);
+	printList(a);
+	sort(&a, &b, list_size(&a));
+	printList(a);
+	return (0);
+}
+
+
+
+
+
+
+// ***************** Sort Four ****************
+
+// int	main(int ac, char *av[])
+// {
+// 	t_list	*a;
+// 	t_list	*b;
+// 	int		i;
+
+// 	if (ac == 1)
+// 		return (1);
+// 	a = NULL;
+// 	b = NULL;
+// 	i = 0;
+// 	while (++i < ac)
+// 	{
+// 		if (is_empty(av[i]))
+// 			print_error();
+// 	}
+// 	checker(av, &a);
+// 	printList(a);
+// 	sort(&a, &b, list_size(&a));
+// 	printList(a);
 // 	return (0);
 // }

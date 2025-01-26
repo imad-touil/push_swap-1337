@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 01:35:51 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/26 02:52:03 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_list **a)
+void	sort_four(t_list **a, t_list **b)
 {
-	int	max_index;
+	t_list	*tmp;
 
-	max_index = list_size(a) - 1;
-	if ((*a)-> index == max_index)
+	tmp = *a;
+	while (tmp -> index)
+	{
 		ra(a, 1);
-	else if ((*a)-> next -> index == max_index)
-		rra(a, 1);
+		tmp = tmp -> next;
+	}
+	pb(a, b);
+	sort_three(a);
+	pa(a, b);
 }

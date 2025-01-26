@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:13:00 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 17:44:37 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/26 01:37:19 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	rra(t_list **head, int key)
 	tmp -> prev = NULL;
 	(*head)-> prev = tmp;
 	*head = tmp;
-	if (!key)
+	if (key)
 		write(1, "rra\n", 4);
 }

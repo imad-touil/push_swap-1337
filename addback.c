@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:24:29 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/25 22:52:19 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:29:45 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,4 @@ void	addback(t_list **head, int content)
 		tmp = tmp -> next;
 	tmp -> next = node;
 	node -> prev = tmp;
-	// tmp -> index = set_index(head, content);
-	// content = (*head)-> content;
-	// while (tmp)
-	// {
-	// 	if (tmp -> content > content)
-	// 		tmp -> index += 1;
-	// 	tmp = tmp -> prev;
-	// }
 }
