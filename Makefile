@@ -9,7 +9,8 @@ SRCS = main.c ft_atoi.c ft_putchar.c\
 	create_node.c addback.c sa.c sb.c ss.c\
 	pb.c pa.c ra.c rb.c rr.c rra.c rrb.c rrr.c\
 	list_size.c set_index.c sort_two.c sort_three.c\
-	sort_four.c set_position.c 
+	sort_four.c set_position.c sort_five.c sort_large.c\
+	
 
 
 OBJS = $(SRCS:.c=.o)

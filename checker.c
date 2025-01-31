@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 17:00:38 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:18:09 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ void	checker(char **av, t_list **head)
 	}
 	size = list_size(head);
 	set_index(head, size);
-	set_position(head, size);
+	set_position(head);
 }

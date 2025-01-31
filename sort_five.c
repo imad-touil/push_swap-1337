@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_position.c                                     :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 16:57:53 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/29 11:17:33 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/29 12:36:44 by imatouil          #+#    #+#             */
+/*   Updated: 2025/01/29 14:08:21 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_position(t_list **a)
+void	sort_five(t_list **a, t_list **b)
 {
 	t_list	*tmp;
-	int		i;
+	int		min_index;
 
+	if (!is_sorted(a))
+		return ;
 	tmp = *a;
-	i = 0;
-	while (tmp)
+	min_index = get_minindex(a);
+	while (tmp -> index != min_index)
 	{
-		tmp->position = i++;
-		tmp = tmp->next;
+		rra(a, 1);
+		tmp = *a;
 	}
+	pb(a, b);
+	sort_four(a, b);
+	pa(a, b);
 }
