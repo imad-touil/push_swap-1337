@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:21:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/01 18:08:19 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:25:08 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_back(t_list **a, t_list **b)
 	tmp = *b;
 	while (tmp -> index != max_index)
 	{
-		ra(b, 1);
+		rb(b, 1);
 		tmp = *b;
 	}
 	pa(a, b);
@@ -61,5 +61,4 @@ void	sort_large(t_list **a, t_list **b)
 		push_back(a, b);
 		tmp = *b;
 	}
-	printList(*a);
 }
