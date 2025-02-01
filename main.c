@@ -6,24 +6,24 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/31 11:50:30 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:45:34 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	printList(t_list *node) {
-// 	int	tmp;
-//     t_list *last;
+void	printList(t_list *node) {
+	int	tmp;
+    t_list *last;
 
-//     printf("Traversal in forward direction:\n");
-//     while (node != NULL) {
-// 		tmp = node -> content;
-//         printf("value ==> %d, index ==>> %d\n", tmp, node -> index);
-//         last = node;
-//         node = node->next;
-//     }
-//     printf("\n");
+    printf("Traversal in forward direction:\n");
+    while (node != NULL) {
+		tmp = node -> content;
+        printf("value ==> %d, index ==>> %d\n", tmp, node -> index);
+        last = node;
+        node = node->next;
+    }
+    printf("\n");
     // printf("Traversal in reverse direction:\n");
     // while (last != NULL) {
 	// 	tmp = last -> content;
@@ -31,7 +31,7 @@
     //     last = last->prev;
     // }
     // printf("\n");
-// }
+}
 
 // int	main(void)
 // {
@@ -244,6 +244,17 @@ void	sort(t_list **a, t_list **b, int size)
 		sort_large(a, b);
 }
 
+
+
+// *************** Check pointer movement *********************
+// void	move(t_list **a)
+// {
+// 	*a = (*a)-> next;
+// }
+
+
+
+
 // ***************** Sort Two ****************
 
 // int	main(int ac, char *av[])
@@ -319,8 +330,8 @@ int	main(int ac, char *av[])
 			print_error();
 	}
 	checker(av, &a);
-	// printList(a);
+	printList(a);
 	sort(&a, &b, list_size(&a));
-	// printList(a);
+	printList(a);
 	return (0);
 }
