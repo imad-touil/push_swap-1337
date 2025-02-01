@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:08:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/01 12:45:34 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:04:07 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -330,7 +330,7 @@ int	main(int ac, char *av[])
 			print_error();
 	}
 	checker(av, &a);
-	printList(a);
+	// printList(a);
 	sort(&a, &b, list_size(&a));
 	printList(a);
 	return (0);
