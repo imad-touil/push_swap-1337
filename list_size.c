@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:50:56 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 21:18:16 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:18:58 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	list_size(t_list **head)
 {
-	int	counter;
+	int		counter;
 	t_list	*tmp;
 
 	if (!head || !*head)
 		return (0);
 	counter = 0;
-	tmp =*head;
+	tmp = *head;
 	while (tmp)
 	{
 		counter++;

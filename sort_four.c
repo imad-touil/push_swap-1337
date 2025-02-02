@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/29 14:10:14 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:20:11 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	get_minindex(t_list **a)
 int	is_sorted(t_list **a)
 {
 	t_list	*tmp;
-	
+
 	tmp = *a;
 	while (tmp -> next)
 	{

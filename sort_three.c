@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/26 23:39:43 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:24:54 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	sort_three(t_list **a)
 {
-	int	first = (*a)->content;
-	int	second = (*a)->next->content;
-	int	third = (*a)->next->next->content;
+	int	first;
+	int	second;
+	int	third;
 
+	first = (*a)->content;
+	second = (*a)->next->content;
+	third = (*a)->next->next->content;
 	if (first > second && second > third)
 	{
 		sa(a, 1);
@@ -35,4 +38,3 @@ void	sort_three(t_list **a)
 	else if (third > first && first > second)
 		sa(a, 1);
 }
-

@@ -1,92 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main_program.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 18:58:30 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/21 11:20:58 by imatouil         ###   ########.fr       */
+/*   Created: 2025/02/02 16:45:08 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/02 16:45:10 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*create_node(int content)
+void	sort(t_list **a, t_list **b, int size)
 {
-	t_list	*new;
-
-	new = (t_list*)malloc(sizeof(t_list));
-	if (!new)
-	{
-		free_node(&new);
-		return (NULL);
-	}
-	new -> content = content;
-	new -> next = NULL;
-	new -> prev = NULL;
-	return (new);
+	if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size == 4)
+		sort_four(a, b);
+	else if (size == 5)
+		sort_five(a, b);
+	else if (size > 5)
+		sort_large(a, b);
 }
-
-void	addback(t_list **head, int content)
-{
-	t_list	*node;
-	t_list	*tmp;
-
-	node = create_node(content);
-	if (!node)
-		return ;
-	if (*head == NULL)
-	{
-		*head = node;
-		return ;
-	}
-	tmp = *head;
-	while (tmp -> next)
-		tmp = tmp -> next;
-	tmp -> next = node;
-	node -> prev = tmp;
-}
-
-void printList(t_list *node) {
-	int	tmp;
-    t_list *last;
-
-    printf("Traversal in forward direction:\n");
-    while (node != NULL) {
-		tmp = node -> content;
-        printf("%d ", tmp);
-        last = node;
-        node = node->next;
-    }
-    printf("\n");
-    printf("Traversal in reverse direction:\n");
-    while (last != NULL) {
-		tmp = last -> content;
-        printf("%d ", tmp);
-        last = last->prev;
-    }
-    printf("\n");
-}
-
-
 
 int	main(int ac, char *av[])
 {
-	t_list	*head;
+	t_list	*a;
+	t_list	*b;
+	int		i;
 
-	head = NULL;
 	if (ac == 1)
 		return (1);
-	int	i = 1;
-	while (i < ac)
+	a = NULL;
+	b = NULL;
+	i = 0;
+	while (++i < ac)
 	{
 		if (is_empty(av[i]))
 			print_error();
-		i++;
 	}
-	checker(av, &head);
-	sb(&head);
-	printList(head);
+	checker(av, &a);
+	// printList(a);
+	sort(&a, &b, list_size(&a));
+	// printList(a);
 	return (0);
 }

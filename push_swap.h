@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 22:58:32 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/01 13:49:39 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:29:17 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 typedef struct s_list
 {
 	int				content;
-	int				position;
 	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -61,7 +60,6 @@ void	sort_two(t_list **a);
 void	sort_three(t_list **a);
 void	set_index(t_list **head, int size);
 void	sort_four(t_list **a, t_list **b);
-void	set_position(t_list **a);
 void	sort_five(t_list **a, t_list **b);
 int		get_minindex(t_list **a);
 int		is_sorted(t_list **a);
