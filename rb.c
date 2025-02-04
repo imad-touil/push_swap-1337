@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:37:43 by imatouil          #+#    #+#             */
-/*   Updated: 2025/01/24 17:43:15 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:51:56 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	rb(t_list **head, int key)
 	tail -> next = tmp;
 	tmp -> prev = tail;
 	tmp -> next = NULL;
-	if (!key)
+	if (key)
 		write(1, "rb\n", 3);
 }

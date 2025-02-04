@@ -1,4 +1,5 @@
-NAME = push_swap.a
+PROGRAM = push_swap
+LIBFT = ./libft.a 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = list_size.c ft_atoi.c ft_putchar.c\
@@ -9,26 +10,25 @@ SRCS = list_size.c ft_atoi.c ft_putchar.c\
 	create_node.c addback.c sa.c sb.c ss.c\
 	pb.c pa.c ra.c rb.c rr.c rra.c rrb.c rrr.c\
 	set_index.c sort_two.c sort_three.c sort_four.c\
-	sort_five.c sort_large.c push_swap.c\
+	sort_five.c sort_large.c push_swap.c set_position.c\
 	
 
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: $(PROGRAM)
 
+$(PROGRAM): $(OBJS)
+	$(CC) $(OBJS) -o $(PROGRAM)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-
-%.o: %.c libft.h
+%.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS) $(B_OBJS)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(PROGRAM)
 
 re: fclean all
 

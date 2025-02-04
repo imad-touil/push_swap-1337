@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_program.c                                     :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:45:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/02 16:45:10 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:19:28 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void	printList(t_list *node) {
+// 	int	tmp;
+//     t_list *last;
+
+//     printf("Traversal in forward direction:\n");
+//     while (node != NULL) {
+// 		tmp = node -> content;
+//         printf("value ==> %d, index ==>> %d\n", tmp, node -> index);
+//         last = node;
+//         node = node->next;
+//     }
+//     printf("\n");
+// }
 
 void	sort(t_list **a, t_list **b, int size)
 {
@@ -43,8 +57,6 @@ int	main(int ac, char *av[])
 			print_error();
 	}
 	checker(av, &a);
-	// printList(a);
 	sort(&a, &b, list_size(&a));
-	// printList(a);
 	return (0);
 }
