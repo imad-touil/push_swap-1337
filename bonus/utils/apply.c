@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:15:54 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 16:17:26 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:04:44 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	check_mouve(const char *res)
 		return (10);
 	else if (!ft_strncmp(res, "ss\n", 3))
 		return (11);
+	else 
+		print_ko();
 	return (0);
 }
 
