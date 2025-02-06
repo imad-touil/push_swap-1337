@@ -60,7 +60,7 @@ B_SR = ./bonus/sorting/sort_two.c ./bonus/sorting/sort_three.c\
 # ***************| Bonus utiles |****************
 
 B_UT = ./bonus/utils/apply.c ./bonus/utils/ft_strncmp.c\
-	./bonus/checker.c ./bonus/utils/ko.c\
+	./bonus/checker.c ./bonus/utils/ko.c ./bonus/utils/get_min.c\
 
 # ***************| Bonus G.N.Line |****************
 

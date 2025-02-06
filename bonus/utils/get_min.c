@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   get_min.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 21:04:39 by imatouil         ###   ########.fr       */
+/*   Created: 2025/02/06 21:39:34 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/06 21:40:16 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-t_list	*get_min(t_list **a)
+t_list	*get_min_node(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*res;
@@ -31,38 +31,4 @@ t_list	*get_min(t_list **a)
 		tmp = tmp -> next;
 	}
 	return (res);
-}
-
-int	is_sorted(t_list **a)
-{
-	t_list	*tmp;
-
-	tmp = *a;
-	while (tmp -> next)
-	{
-		if (tmp -> content > tmp -> next -> content)
-			return (1);
-		tmp = tmp -> next;
-	}
-	return (0);
-}
-
-void	sort_four(t_list **a, t_list **b)
-{
-	t_list	*tmp;
-	t_list	*min;
-
-	tmp = *a;
-	set_position(a);
-	min = get_min(a);
-	if (!is_sorted(a))
-		return ;
-	while (tmp != min)
-	{
-		ra(a, 1);
-		tmp = *a;
-	}
-	pb(a, b);
-	sort_three(a);
-	pa(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:36:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:49:20 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:40:56 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 void	sort_five(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-	int		min_index;
+	t_list	*min;
 
 	if (!is_sorted(a))
 		return ;
-	tmp = *a;
-	min_index = get_minindex(a);
-	while (tmp -> index != min_index)
+	set_position(a);
+	min = get_min_node(a);
+	if (min -> position == 0)
 	{
-		rev_ra(a);
-		tmp = *a;
+		while (*a != min)
+			rotate_a(a);
+	}
+	else
+	{
+		while (*a != min)
+			rev_ra(a);
 	}
 	push_b(a, b);
 	sort_four(a, b);
