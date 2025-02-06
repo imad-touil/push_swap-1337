@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 16:45:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/05 17:42:17 by imatouil         ###   ########.fr       */
+/*   Created: 2025/02/05 15:04:13 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/05 21:38:21 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	sort(t_list **a, t_list **b, int size)
+void	checker(t_list **a, t_list **b)
 {
-	if (size == 2)
-		sort_two(a);
-	else if (size == 3)
-		sort_three(a);
-	else if (size == 4)
-		sort_four(a, b);
-	else if (size == 5)
-		sort_five(a, b);
-	else if (size > 4)
-		sort_large(a, b);
+	char	*line;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		apply(a, b, line);
+		line = get_next_line(0);
+	}
+	if (!is_sorted(a) && !list_size(b))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 }
 
 int	main(int ac, char *av[])
@@ -43,6 +45,6 @@ int	main(int ac, char *av[])
 			print_error();
 	}
 	fill_stack(av, &a);
-	sort(&a, &b, list_size(&a));
+	checker(&a, &b);
 	return (0);
 }
