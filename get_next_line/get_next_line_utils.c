@@ -6,25 +6,15 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:52:43 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 17:01:52 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:11:18 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 		i++;
-// 	return (i);
-// }
-
 char	*ft_substr(char *s, int start, int len)
 {
-	int	i;
+	int		i;
 	char	*ptr;
 
 	i = ft_strlen(s);
@@ -85,9 +75,9 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int	len;
-	int	j;
-	int	i;
+	int		len;
+	int		j;
+	int		i;
 	char	*ptr;
 
 	if (!s1)
