@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:21:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/05 22:13:14 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:43:05 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ void	sort_large(t_list **a, t_list **b)
 	int		min;
 	int		max;
 
+	if (!is_sorted(a))
+		return ;
 	min = 0;
 	max = list_size(a) * 0.048 + 10;
 	helper(a, b, min, max);

@@ -3,7 +3,9 @@ B_NAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-#---------------------| Mandatory |----------------
+
+
+#---------------------| START Mandatory |----------------
 # *****************| mouves sources |**************
 
 MV_SRCS = ./mouves/pa.c ./mouves/pb.c ./mouves/ra.c\
@@ -38,11 +40,11 @@ UT_SRCS = ./utils/addback.c ./utils/fill_stack.c\
 SRCS = $(MV_SRCS) $(PR_SRCS) $(ST_SRCS) $(UT_SRCS) push_swap.c 
 
 OBJS = $(SRCS:.c=.o) 
-#---------------------| Mandatory |----------------
+#---------------------| END Mandatory |----------------
 
 
 
-#---------------------| Bonus |--------------------
+#---------------------| START Bonus |--------------------
 
 # ***************| Bonus Mouves |****************
 
@@ -72,10 +74,9 @@ B_SRCS = $(B_MV) $(B_SR) $(UT_SRCS) $(B_NL) $(PR_SRCS) $(B_UT)
 
 B_OBJS = $(B_SRCS:.c=.o)
 
+#---------------------| END Bonus |--------------------
 
-#---------------------| Bonus |--------------------
-
-
+HEADERS = push_swap.h ./get_next_line/get_next_line.h ./bonus/checker.h 
 
 all: $(NAME)
 
@@ -88,7 +89,7 @@ bonus: $(B_NAME)
 $(B_NAME): $(B_OBJS)
 	$(CC) $(B_SRCS) -o $(B_NAME)
 
-%.o: %.c push_swap.h 
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
