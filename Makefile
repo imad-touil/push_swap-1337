@@ -33,7 +33,7 @@ UT_SRCS = ./utils/addback.c ./utils/fill_stack.c\
 	./utils/ft_putnbr.c ./utils/ft_split.c\
 	./utils/ft_strlcpy.c ./utils/ft_strlen.c\
 	./utils/list_size.c ./utils/set_index.c\
-	./utils/set_position.c\
+	./utils/set_position.c ./utils/lstclear.c\
 
 # ***************| SRCS and OBJS |****************
 

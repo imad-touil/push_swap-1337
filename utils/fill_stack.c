@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/05 17:40:37 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:00:20 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ static void	ft_helper(char *str, t_list **head)
 		if (!is_valid_number(res[j]) || !is_valid_range(res[j]))
 		{
 			ft_free(res);
+			lstclear(*head);
 			print_error();
 		}
 		num = ft_atoi(res[j]);
 		if (is_dublicate(num, *head))
 		{
 			ft_free(res);
+			lstclear(*head);
 			print_error();
 		}
 		addback(head, num);
