@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 01:56:33 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/07 17:30:23 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:44:50 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	is_sorted(t_list **a)
 {
 	t_list	*tmp;
 
+	if (!a || !*a)
+		return (0);
 	tmp = *a;
 	while (tmp -> next)
 	{

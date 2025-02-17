@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:04:13 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/14 10:56:53 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:37:45 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	checker(t_list **a, t_list **b)
 	while (line)
 	{
 		apply(a, b, line);
+		free(line);
 		line = get_next_line(0);
 	}
 	if (!is_sorted(a) && !list_size(b))
@@ -35,7 +36,7 @@ int	main(int ac, char *av[])
 	int		i;
 
 	if (ac == 1)
-		return (1);
+		return (0);
 	a = NULL;
 	b = NULL;
 	i = 0;

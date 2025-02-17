@@ -6,16 +6,11 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:45:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/14 10:52:28 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:40:27 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leak()
-{
-	system("leaks -q push_swap");
-}
 
 void	sort(t_list **a, t_list **b, int size)
 {
@@ -37,9 +32,8 @@ int	main(int ac, char *av[])
 	t_list	*b;
 	int		i;
 
-	atexit(leak);
 	if (ac == 1)
-		return (1);
+		return (0);
 	a = NULL;
 	b = NULL;
 	i = 0;
@@ -50,6 +44,7 @@ int	main(int ac, char *av[])
 	}
 	fill_stack(av, &a);
 	sort(&a, &b, list_size(&a));
+	a = NULL;
 	lstclear(a);
 	return (0);
 }

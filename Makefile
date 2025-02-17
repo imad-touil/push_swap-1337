@@ -62,7 +62,7 @@ B_SR = ./bonus/sorting/sort_two.c ./bonus/sorting/sort_three.c\
 # ***************| Bonus utiles |****************
 
 B_UT = ./bonus/utils/apply.c ./bonus/utils/ft_strncmp.c\
-	./bonus/checker.c ./bonus/utils/ko.c ./bonus/utils/get_min.c\
+	./bonus/checker.c ./bonus/utils/get_min.c\
 
 # ***************| Bonus G.N.Line |****************
 
@@ -93,10 +93,10 @@ $(B_NAME): $(B_OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS) $(B_OBJS)
+	rm -rf $(OBJS) $(B_OBJS)
 
 fclean: clean
-	@rm -rf $(NAME) $(B_NAME)
+	rm -rf $(NAME) $(B_NAME)
 
 re: fclean all
 
