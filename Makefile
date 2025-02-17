@@ -76,21 +76,18 @@ B_OBJS = $(B_SRCS:.c=.o)
 
 #---------------------| END Bonus |--------------------
 
-HEADERS = push_swap.h ./get_next_line/get_next_line.h ./bonus/checker.h 
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) push_swap.h 
 	$(CC) $(OBJS) -o $(NAME)
 
 
 bonus: $(B_NAME)
 
-$(B_NAME): $(B_OBJS)
+$(B_NAME): $(B_OBJS) ./get_next_line/get_next_line.h ./bonus/checker.h 
 	$(CC) $(B_SRCS) -o $(B_NAME)
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(B_OBJS)

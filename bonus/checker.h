@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:04:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/07 16:44:03 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:35:31 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	sort_four(t_list **a, t_list **b);
 void	sort_large(t_list **a, t_list **b);
 void	sort_three(t_list **a);
 void	sort_two(t_list **a);
-void	print_ko(void);
 t_list	*get_min_node(t_list **a);
 
 #endif

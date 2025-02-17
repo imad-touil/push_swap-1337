@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:15:54 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/17 15:52:21 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:04:42 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void	apply(t_list **a, t_list **b, char *mouve)
 		swap_b(b);
 	else if (!ft_strncmp(mouve, "ss\n", 3))
 		swap_a_b(a, b);
+	else
+		print_error();
 }
