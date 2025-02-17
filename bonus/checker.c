@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:04:13 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/17 15:37:45 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:53:37 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	checker(t_list **a, t_list **b)
 	else
 		write(1, "KO\n", 3);
 }
+
 
 int	main(int ac, char *av[])
 {
