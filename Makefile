@@ -48,26 +48,26 @@ OBJS = $(SRCS:.c=.o)
 
 # ***************| Bonus Mouves |****************
 
-B_MV = ./bonus/mouves/pa.c ./bonus/mouves/pb.c ./bonus/mouves/ra.c\
-	./bonus/mouves/rb.c ./bonus/mouves/rr.c ./bonus/mouves/rra.c\
-	./bonus/mouves/rrb.c ./bonus/mouves/rrr.c ./bonus/mouves/sa.c\
-	./bonus/mouves/sb.c ./bonus/mouves/ss.c\
+B_MV = ./bonus/mouves_bonus/pa_bonus.c ./bonus/mouves_bonus/pb_bonus.c ./bonus/mouves_bonus/ra_bonus.c\
+	./bonus/mouves_bonus/rb_bonus.c ./bonus/mouves_bonus/rr_bonus.c ./bonus/mouves_bonus/rra_bonus.c\
+	./bonus/mouves_bonus/rrb_bonus.c ./bonus/mouves_bonus/rrr_bonus.c ./bonus/mouves_bonus/sa_bonus.c\
+	./bonus/mouves_bonus/sb_bonus.c ./bonus/mouves_bonus/ss_bonus.c\
 
 # ***************| Bonus sorting |****************
 
-B_SR = ./bonus/sorting/sort_two.c ./bonus/sorting/sort_three.c\
-	./bonus/sorting/sort_four.c ./bonus/sorting/sort_five.c\
-	./bonus/sorting/sort_large.c\
+B_SR = ./bonus/sorting_bonus/sort_two_bonus.c ./bonus/sorting_bonus/sort_three_bonus.c\
+	./bonus/sorting_bonus/sort_four_bonus.c ./bonus/sorting_bonus/sort_five_bonus.c\
+	./bonus/sorting_bonus/sort_large_bonus.c\
 
 # ***************| Bonus utiles |****************
 
-B_UT = ./bonus/utils/apply.c ./bonus/utils/ft_strncmp.c\
-	./bonus/checker.c ./bonus/utils/get_min.c\
+B_UT = ./bonus/utils_bonus/apply_bonus.c ./bonus/utils_bonus/ft_strncmp_bonus.c\
+	./bonus/checker_bonus.c ./bonus/utils_bonus/get_min_bonus.c\
 
 # ***************| Bonus G.N.Line |****************
 
-B_NL = ./get_next_line/get_next_line.c\
-	./get_next_line/get_next_line_utils.c\
+B_NL = ./get_next_line_bonus/get_next_line_bonus.c\
+	./get_next_line_bonus/get_next_line_utils_bonus.c\
 
 
 B_SRCS = $(B_MV) $(B_SR) $(UT_SRCS) $(B_NL) $(PR_SRCS) $(B_UT)
@@ -85,7 +85,7 @@ $(NAME): $(OBJS) push_swap.h
 
 bonus: $(B_NAME)
 
-$(B_NAME): $(B_OBJS) ./get_next_line/get_next_line.h ./bonus/checker.h 
+$(B_NAME): $(B_OBJS) ./get_next_line_bonus/get_next_line_bonus.h ./bonus/checker_bonus.h 
 	$(CC) $(B_SRCS) -o $(B_NAME)
 
 
