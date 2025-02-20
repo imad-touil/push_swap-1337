@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_two.c                                         :+:      :+:    :+:   */
+/*   rra_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 18:47:12 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:51:52 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/22 11:13:00 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:52:18 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	sort_two(t_list **a)
+void	rev_ra(t_list **head)
 {
-	int		x;
 	t_list	*tmp;
 
-	tmp = *a;
-	x = tmp-> content;
-	tmp = tmp -> next;
-	if (x > tmp-> content)
-		swap_a(a);
+	if (!head || !*head || !(*head)-> next)
+		return ;
+	tmp = *head;
+	while (tmp -> next)
+		tmp = tmp -> next;
+	tmp -> prev -> next = NULL;
+	tmp -> next = *head;
+	tmp -> prev = NULL;
+	(*head)-> prev = tmp;
+	*head = tmp;
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   pa_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:16:55 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:47:35 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 12:17:39 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:51:50 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	swap_a(t_list **head)
+void	push_a(t_list **ahead, t_list **bhead)
 {
 	t_list	*tmp;
 
-	if (!head || !(*head) || !(*head)-> next)
+	if (!bhead || !*bhead)
 		return ;
-	tmp = (*head)-> next;
-	(*head)-> next = tmp -> next;
-	if (tmp -> next)
-		tmp -> next -> prev = *head;
-	tmp -> next = *head;
-	tmp -> prev = (*head)-> prev;
-	(*head)-> prev = tmp;
-	*head = tmp;
+	tmp = *bhead;
+	*bhead = tmp -> next;
+	if (*bhead)
+		(*bhead)-> prev = NULL;
+	tmp -> next = *ahead;
+	if (*ahead)
+		(*ahead)-> prev = tmp;
+	tmp -> prev = NULL;
+	*ahead = tmp;
 }

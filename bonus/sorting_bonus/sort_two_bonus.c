@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   sort_two_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 18:46:03 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:48:29 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/24 18:47:12 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:53:18 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	swap_a_b(t_list **a, t_list **b)
+void	sort_two(t_list **a)
 {
-	if ((!a || !(*a) || !(*a)-> next)
-		|| (!b || !(*b) || !(*b)-> next))
-		return ;
-	swap_a(a);
-	swap_b(b);
+	int		x;
+	t_list	*tmp;
+
+	tmp = *a;
+	x = tmp-> content;
+	tmp = tmp -> next;
+	if (x > tmp-> content)
+		swap_a(a);
 }

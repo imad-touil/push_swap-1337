@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   ss_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 13:33:02 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:43:43 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 18:46:03 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:52:36 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	rotate_a(t_list **head)
+void	swap_a_b(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-	t_list	*tail;
-
-	if (!head || !*head || !(*head)-> next)
+	if ((!a || !(*a) || !(*a)-> next)
+		|| (!b || !(*b) || !(*b)-> next))
 		return ;
-	tmp = *head;
-	*head = tmp -> next;
-	(*head)-> prev = NULL;
-	tail = *head;
-	while (tail -> next)
-		tail = tail -> next;
-	tail -> next = tmp;
-	tmp -> prev = tail;
-	tmp -> next = NULL;
+	swap_a(a);
+	swap_b(b);
 }

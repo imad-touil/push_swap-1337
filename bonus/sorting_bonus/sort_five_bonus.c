@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   sort_five_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 11:13:00 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:45:30 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/29 12:36:44 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:53:04 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	rev_ra(t_list **head)
+void	sort_five(t_list **a, t_list **b)
 {
-	t_list	*tmp;
+	t_list	*min;
 
-	if (!head || !*head || !(*head)-> next)
+	if (!is_sorted(a))
 		return ;
-	tmp = *head;
-	while (tmp -> next)
-		tmp = tmp -> next;
-	tmp -> prev -> next = NULL;
-	tmp -> next = *head;
-	tmp -> prev = NULL;
-	(*head)-> prev = tmp;
-	*head = tmp;
+	set_position(a);
+	min = get_min_node(a);
+	if (min -> position == 0)
+	{
+		while (*a != min)
+			rotate_a(a);
+	}
+	else
+	{
+		while (*a != min)
+			rev_ra(a);
+	}
+	push_b(a, b);
+	sort_four(a, b);
+	push_a(a, b);
 }

@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   sb_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 11:58:16 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:47:08 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 10:13:42 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:52:33 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	rev_rr(t_list **a, t_list **b)
+void	swap_b(t_list **head)
 {
-	if (a && *a && (*a)-> next)
-		rev_ra(a);
-	if (b && *b && (*b)-> next)
-		rev_ra(b);
+	t_list	*first;
+	t_list	*second;
+
+	if (!head || !(*head) || !(*head)-> next)
+		return ;
+	first = *head;
+	second = (*head)-> next;
+	first -> next = second -> next;
+	if (second -> next)
+		second -> next -> prev = first;
+	second -> next = first;
+	second -> prev = first -> prev;
+	first -> prev = second;
+	*head = second;
 }

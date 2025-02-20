@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   sort_three_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 12:36:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 21:40:56 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/24 21:19:51 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:53:13 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	sort_five(t_list **a, t_list **b)
+void	sort_three(t_list **a)
 {
-	t_list	*min;
+	t_list	*tmp;
 
-	if (!is_sorted(a))
-		return ;
-	set_position(a);
-	min = get_min_node(a);
-	if (min -> position == 0)
-	{
-		while (*a != min)
-			rotate_a(a);
-	}
-	else
-	{
-		while (*a != min)
-			rev_ra(a);
-	}
-	push_b(a, b);
-	sort_four(a, b);
-	push_a(a, b);
+	tmp = get_maxindex(a);
+	if (tmp == *a)
+		rotate_a(a);
+	else if (tmp == (*a)-> next)
+		rev_ra(a);
+	if ((*a)-> content > (*a)-> next -> content)
+		swap_a(a);
 }

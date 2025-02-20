@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   rb_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 19:55:30 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:18:34 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 17:37:43 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:52:00 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	rotate_b(t_list **head)
 {
-	size_t	i;
+	t_list	*tmp;
+	t_list	*tail;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
-		i++;
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (!head || !*head || !(*head)-> next)
+		return ;
+	tmp = *head;
+	*head = tmp -> next;
+	(*head)-> prev = NULL;
+	tail = *head;
+	while (tail -> next)
+		tail = tail -> next;
+	tail -> next = tmp;
+	tmp -> prev = tail;
+	tmp -> next = NULL;
 }

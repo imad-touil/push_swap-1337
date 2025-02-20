@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ra_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 11:31:19 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/06 14:45:58 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/21 13:33:02 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/20 10:51:57 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../checker_bonus.h"
 
-void	rev_rb(t_list **head)
+void	rotate_a(t_list **head)
 {
 	t_list	*tmp;
+	t_list	*tail;
 
 	if (!head || !*head || !(*head)-> next)
 		return ;
 	tmp = *head;
-	while (tmp -> next)
-		tmp = tmp -> next;
-	tmp -> prev -> next = NULL;
-	tmp -> next = *head;
-	tmp -> prev = NULL;
-	(*head)-> prev = tmp;
-	*head = tmp;
+	*head = tmp -> next;
+	(*head)-> prev = NULL;
+	tail = *head;
+	while (tail -> next)
+		tail = tail -> next;
+	tail -> next = tmp;
+	tmp -> prev = tail;
+	tmp -> next = NULL;
 }
