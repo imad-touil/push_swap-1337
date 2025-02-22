@@ -63,6 +63,13 @@ B_SR = ./bonus/sorting_bonus/sort_two_bonus.c ./bonus/sorting_bonus/sort_three_b
 
 B_UT = ./bonus/utils_bonus/apply_bonus.c ./bonus/utils_bonus/ft_strncmp_bonus.c\
 	./bonus/checker_bonus.c ./bonus/utils_bonus/get_min_bonus.c\
+	./bonus/utils_bonus/addback_bonus.c ./bonus/utils_bonus/fill_stack_bonus.c\
+	./bonus/utils_bonus/create_node_bonus.c ./bonus/utils_bonus/free_node_bonus.c\
+	./bonus/utils_bonus/ft_atoi_bonus.c ./bonus/utils_bonus/ft_putchar_bonus.c\
+	./bonus/utils_bonus/ft_putnbr_bonus.c ./bonus/utils_bonus/ft_split_bonus.c\
+	./bonus/utils_bonus/ft_strlcpy_bonus.c ./bonus/utils_bonus/ft_strlen_bonus.c\
+	./bonus/utils_bonus/list_size_bonus.c ./bonus/utils_bonus/set_index_bonus.c\
+	./bonus/utils_bonus/set_position_bonus.c ./bonus/utils_bonus/lstclear_bonus.c\
 
 # ***************| Bonus G.N.Line |****************
 
@@ -70,7 +77,7 @@ B_NL = ./get_next_line_bonus/get_next_line_bonus.c\
 	./get_next_line_bonus/get_next_line_utils_bonus.c\
 
 
-B_SRCS = $(B_MV) $(B_SR) $(UT_SRCS) $(B_NL) $(PR_SRCS) $(B_UT)
+B_SRCS = $(B_MV) $(B_SR) $(B_NL) $(PR_SRCS) $(B_UT)
 
 B_OBJS = $(B_SRCS:.c=.o)
 

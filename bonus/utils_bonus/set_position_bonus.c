@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid_range.c                                   :+:      :+:    :+:   */
+/*   set_position_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 19:01:25 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/22 14:49:50 by imatouil         ###   ########.fr       */
+/*   Created: 2025/02/03 13:20:52 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/22 15:03:30 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-int	is_valid_range(char *str)
+void	set_position(t_list **a)
 {
-	long	num;
+	t_list	*tmp;
+	int		i;
+	int		size;
 
-	num = ft_atoi(str);
-	if (num >= INT_MIN && num <= INT_MAX)
-		return (1);
-	return (0);
+	tmp = *a;
+	size = list_size(a);
+	i = 0;
+	while (tmp)
+	{
+		if (i <= size / 2)
+			tmp->position = 0;
+		else
+			tmp->position = 1;
+		tmp = tmp->next;
+		i++;
+	}
 }

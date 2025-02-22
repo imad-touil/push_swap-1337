@@ -6,11 +6,22 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:15:54 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:53:34 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/22 15:07:58 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
+
+void	free_and_exit(t_list **a, t_list **b, char *mouve)
+{
+	if (!a || !b || !mouve)
+		return ;
+	lstclear(*a);
+	lstclear(*b);
+	free(mouve);
+	get_next_line(-1);
+	print_error();
+}
 
 void	apply(t_list **a, t_list **b, char *mouve)
 {
@@ -37,5 +48,5 @@ void	apply(t_list **a, t_list **b, char *mouve)
 	else if (!ft_strncmp(mouve, "ss\n", 3))
 		swap_a_b(a, b);
 	else
-		print_error();
+		free_and_exit(a, b, mouve);
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_valid_range.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 19:01:25 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/22 14:49:50 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/15 20:36:07 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/22 15:03:07 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-int	is_valid_range(char *str)
+int	ft_strlcpy(char *dest, char *src, int size)
 {
-	long	num;
+	int	i;
+	int	len;
 
-	num = ft_atoi(str);
-	if (num >= INT_MIN && num <= INT_MAX)
-		return (1);
-	return (0);
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	i = 0;
+	while (i + 1 < size && src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (len);
 }
