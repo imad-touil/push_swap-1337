@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:52:43 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:44:38 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:16:56 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,11 @@ char	*ft_strdup(char *s)
 {
 	char	*ptr;
 	int		len;
-	int		i;
 
 	len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	i = 0;
 	ptr[len] = '\0';
 	while (len--)
 		ptr[len] = s[len];

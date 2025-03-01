@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five_bonus.c                                  :+:      :+:    :+:   */
+/*   is_dublicate_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 12:36:44 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:53:04 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/16 19:07:25 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/24 18:29:37 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
 
-void	sort_five(t_list **a, t_list **b)
+int	is_dublicate(int num, t_list *head)
 {
-	t_list	*min;
+	t_list	*tmp;
 
-	if (!is_sorted(a))
-		return ;
-	set_position(a);
-	min = get_min_node(a);
-	if (min -> position == 0)
+	tmp = head;
+	while (tmp)
 	{
-		while (*a != min)
-			rotate_a(a);
+		if (num == tmp -> content)
+			return (1);
+		tmp = tmp -> next;
 	}
-	else
-	{
-		while (*a != min)
-			rev_ra(a);
-	}
-	push_b(a, b);
-	sort_four(a, b);
-	push_a(a, b);
+	return (0);
 }

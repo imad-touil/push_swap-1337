@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 18:28:24 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/05 16:22:04 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/24 21:28:46 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	ft_count_word(char *str)
 	while (str[i])
 	{
 		key = 1;
-		while (str[i] && str[i] <= 32)
+		while (str[i] && (unsigned char)str[i] <= 32)
 			i++;
-		while (str[i] && str[i] > 32)
+		while (str[i] && (unsigned char)str[i] > 32)
 		{
 			if (key)
 			{
@@ -61,9 +61,9 @@ static char	**ft_helper(char **res, char *str)
 	while (str[i])
 	{
 		len = 0;
-		while (str[i] && str[i] <= 32)
+		while (str[i] && (unsigned char)str[i] <= 32)
 			i++;
-		while (str[i + len] && str[i + len] > 32)
+		while (str[i + len] && (unsigned char)str[i + len] > 32)
 			len++;
 		if (len > 0)
 		{

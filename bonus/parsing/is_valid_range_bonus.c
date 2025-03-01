@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_position_bonus.c                               :+:      :+:    :+:   */
+/*   is_valid_range_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 13:20:52 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/22 15:03:30 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/16 19:01:25 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/24 18:29:47 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
 
-void	set_position(t_list **a)
+int	check_len(char *str)
 {
-	t_list	*tmp;
-	int		i;
-	int		size;
+	int	i;
+	int	len;
 
-	tmp = *a;
-	size = list_size(a);
 	i = 0;
-	while (tmp)
-	{
-		if (i <= size / 2)
-			tmp->position = 0;
-		else
-			tmp->position = 1;
-		tmp = tmp->next;
+	if (str[i] == '-' || str[i] == '+')
 		i++;
-	}
+	while (str[i] == '0' && str[i])
+		i++;
+	len = 0;
+	while (str[i++])
+		len++;
+	return (len);
+}
+
+int	is_valid_range(char *str)
+{
+	long	num;
+
+	num = ft_atoi(str);
+	if ((num >= INT_MIN && num <= INT_MAX) && check_len(str) < 11)
+		return (1);
+	return (0);
 }

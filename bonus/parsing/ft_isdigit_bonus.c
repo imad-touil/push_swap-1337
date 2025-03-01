@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_min_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_isdigit_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 21:39:34 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:53:41 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/16 14:45:41 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/24 18:29:34 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
 
-t_list	*get_min_node(t_list **a)
+int	ft_isdigit(int c)
 {
-	t_list	*tmp;
-	t_list	*res;
-	int		min;
-
-	tmp = *a;
-	res = tmp;
-	min = tmp -> content;
-	while (tmp)
-	{
-		if (tmp -> content < min)
-		{
-			res = tmp;
-			min = tmp -> content;
-		}
-		tmp = tmp -> next;
-	}
-	return (res);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_index_bonus.c                                  :+:      :+:    :+:   */
+/*   is_valid_number_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 22:44:30 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/22 15:03:27 by imatouil         ###   ########.fr       */
+/*   Created: 2025/01/16 18:07:12 by imatouil          #+#    #+#             */
+/*   Updated: 2025/02/24 18:29:44 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
 
-void	set_index(t_list **head, int size)
+int	is_valid_number(char *str)
 {
-	t_list	*tmp;
-	t_list	*cuurent;
-	int		counter;
-	int		i;
+	int	i;
 
 	i = 0;
-	tmp = *head;
-	while (i < size)
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
 	{
-		counter = 0;
-		cuurent = *head;
-		while (cuurent)
-		{
-			if (tmp -> content > cuurent -> content)
-				counter++;
-			cuurent = cuurent -> next;
-		}
-		tmp -> index = counter;
-		tmp = tmp -> next;
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
+	return (1);
 }

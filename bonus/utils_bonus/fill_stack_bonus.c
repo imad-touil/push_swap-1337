@@ -6,27 +6,11 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:58:36 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/22 15:02:46 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:47:44 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
-
-int	check_len(char *str)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] == '0' && str[i])
-		i++;
-	len = 0;
-	while (str[i++])
-		len++;
-	return (len);
-}
 
 static void	ft_helper(char *str, t_list **head)
 {
@@ -45,7 +29,7 @@ static void	ft_helper(char *str, t_list **head)
 			print_error();
 		}
 		num = ft_atoi(res[j]);
-		if (is_dublicate(num, *head) || check_len(str) > 11)
+		if (is_dublicate(num, *head))
 		{
 			ft_free(res);
 			lstclear(*head);
@@ -69,5 +53,4 @@ void	fill_stack(char **av, t_list **head)
 		i++;
 	}
 	size = list_size(head);
-	set_index(head, size);
 }
