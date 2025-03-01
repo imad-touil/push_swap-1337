@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:04:39 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:51:36 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:01:23 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,6 @@ void	rev_rr(t_list **a, t_list **b);
 void	swap_a(t_list **head);
 void	swap_b(t_list **head);
 void	swap_a_b(t_list **a, t_list **b);
-void	sort_five(t_list **a, t_list **b);
-void	sort_four(t_list **a, t_list **b);
-void	sort_large(t_list **a, t_list **b);
-void	sort_three(t_list **a);
-void	sort_two(t_list **a);
 t_list	*get_min_node(t_list **a);
 
 #endif

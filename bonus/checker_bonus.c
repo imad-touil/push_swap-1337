@@ -6,11 +6,25 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:04:13 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/20 10:57:10 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:59:58 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
+int	is_sorted(t_list **a)
+{
+	t_list	*tmp;
+
+	tmp = *a;
+	while (tmp -> next)
+	{
+		if (tmp -> content > tmp -> next -> content)
+			return (1);
+		tmp = tmp -> next;
+	}
+	return (0);
+}
 
 void	checker(t_list **a, t_list **b)
 {
