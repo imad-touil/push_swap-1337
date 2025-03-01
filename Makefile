@@ -53,23 +53,23 @@ B_MV = ./bonus/mouves_bonus/pa_bonus.c ./bonus/mouves_bonus/pb_bonus.c ./bonus/m
 	./bonus/mouves_bonus/rrb_bonus.c ./bonus/mouves_bonus/rrr_bonus.c ./bonus/mouves_bonus/sa_bonus.c\
 	./bonus/mouves_bonus/sb_bonus.c ./bonus/mouves_bonus/ss_bonus.c\
 
-# ***************| Bonus sorting |****************
-
-B_SR = ./bonus/sorting_bonus/sort_two_bonus.c ./bonus/sorting_bonus/sort_three_bonus.c\
-	./bonus/sorting_bonus/sort_four_bonus.c ./bonus/sorting_bonus/sort_five_bonus.c\
-	./bonus/sorting_bonus/sort_large_bonus.c\
 
 # ***************| Bonus utiles |****************
 
 B_UT = ./bonus/utils_bonus/apply_bonus.c ./bonus/utils_bonus/ft_strncmp_bonus.c\
-	./bonus/checker_bonus.c ./bonus/utils_bonus/get_min_bonus.c\
+	./bonus/checker_bonus.c ./bonus/utils_bonus/lstclear_bonus.c\
 	./bonus/utils_bonus/addback_bonus.c ./bonus/utils_bonus/fill_stack_bonus.c\
 	./bonus/utils_bonus/create_node_bonus.c ./bonus/utils_bonus/free_node_bonus.c\
 	./bonus/utils_bonus/ft_atoi_bonus.c ./bonus/utils_bonus/ft_putchar_bonus.c\
 	./bonus/utils_bonus/ft_putnbr_bonus.c ./bonus/utils_bonus/ft_split_bonus.c\
 	./bonus/utils_bonus/ft_strlcpy_bonus.c ./bonus/utils_bonus/ft_strlen_bonus.c\
-	./bonus/utils_bonus/list_size_bonus.c ./bonus/utils_bonus/set_index_bonus.c\
-	./bonus/utils_bonus/set_position_bonus.c ./bonus/utils_bonus/lstclear_bonus.c\
+	./bonus/utils_bonus/list_size_bonus.c\
+
+# ***************| Bonus parsin |****************
+
+B_PARS = ./bonus/parsing/ft_isdigit_bonus.c ./bonus/parsing/is_dublicate_bonus.c\
+	./bonus/parsing/is_empty_bonus.c ./bonus/parsing/is_valid_number_bonus.c\
+	./bonus/parsing/is_valid_range_bonus.c ./bonus/parsing/print_error_bonus.c\
 
 # ***************| Bonus G.N.Line |****************
 
@@ -77,7 +77,7 @@ B_NL = ./get_next_line_bonus/get_next_line_bonus.c\
 	./get_next_line_bonus/get_next_line_utils_bonus.c\
 
 
-B_SRCS = $(B_MV) $(B_SR) $(B_NL) $(PR_SRCS) $(B_UT)
+B_SRCS = $(B_MV) $(B_SR) $(B_NL) $(B_PARS) $(B_UT)
 
 B_OBJS = $(B_SRCS:.c=.o)
 
@@ -97,10 +97,10 @@ $(B_NAME): $(B_OBJS) ./get_next_line_bonus/get_next_line_bonus.h ./bonus/checker
 
 
 clean:
-	rm -rf $(OBJS) $(B_OBJS)
+	@rm -rf $(OBJS) $(B_OBJS)
 
 fclean: clean
-	rm -rf $(NAME) $(B_NAME)
+	@rm -rf $(NAME) $(B_NAME)
 
 re: fclean all
 

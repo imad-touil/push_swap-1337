@@ -6,7 +6,7 @@
 /*   By: imatouil <imatouil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:45:08 by imatouil          #+#    #+#             */
-/*   Updated: 2025/02/17 17:34:33 by imatouil         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:57:00 by imatouil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort(t_list **a, t_list **b, int size)
 		sort_four(a, b);
 	else if (size == 5)
 		sort_five(a, b);
-	else if (size > 4)
+	else if (size > 5)
 		sort_large(a, b);
 }
 
